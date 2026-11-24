@@ -55,7 +55,10 @@ import requests
 import matplotlib.pyplot as plt
 import os
 
-API_KEY=os.getenv("API_KEY")
+self.api_key=os.getenv("API_KEY")
+
+if not self.api_key:
+    raise ValueError("API_KEY environment variable is not set")
 
 class SinkholeData:
     def __init__(self, startnumber=1, endnumber=1000):
@@ -111,8 +114,8 @@ class SinkholeData:
         return df
     
 class HeavyRain(SinkholeData):
-    def __init__(self, startnumber, endnumber, api_key):
-        super().__init__(startnumber, endnumber, api_key)
+    def __init__(self, startnumber=1, endnumber=1000):
+        super().__init__(startnumber, endnumber)
         self.dataArrange()
 
     def countCause(self):
@@ -127,8 +130,8 @@ cnt = cause_count.countCause()
 print('호우 원인 개수:', cnt)
 
 class Drainpipe(SinkholeData):
-    def __init__(self, startnumber, endnumber, api_key):
-        super().__init__(startnumber, endnumber, api_key)
+    def __init__(self, startnumber=1, endnumber=1000):
+        super().__init__(startnumber, endnumber)
         self.dataArrange()
 
     def countCause(self):
@@ -146,8 +149,8 @@ cnt = cause_count.countCause()
 print('하수관 노후 및 누수 원인 개수:', cnt)
 
 class City(SinkholeData):
-    def __init__(self, startnumber, endnumber, api_key):
-        super().__init__(startnumber, endnumber, api_key)
+    def __init__(self, startnumber=1, endnumber=1000):
+        super().__init__(startnumber, endnumber)
         self.dataArrange()
         self.dataFrame()
 
