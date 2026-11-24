@@ -30,6 +30,16 @@ The project focuses on collecting and processing 200 sinkhole records, examining
 - Compare occurrence frequencies across regions.
 - Prepare bar-chart visualizations using Matplotlib.
 
+## Analysis Results
+
+### 1. Sinkhole Causes
+
+![Sinkhole Causes](results/sinkhole_causes.png)
+
+### 2. Sinkhole Occurrences by City
+
+![Sinkhole Occurrences by City](results/sinkhole_by_city.png)
+
 ## Technologies Used
 
 | Technology | Purpose |
